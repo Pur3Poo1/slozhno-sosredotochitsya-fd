@@ -46,7 +46,6 @@
 .header__theme-menu {
   justify-self: end;
   align-self: center;
-  /* margin-top: 14%; */
 }
 
 .header__theme-menu-list {
@@ -142,8 +141,6 @@ main {
 .section__content {
   display: grid;
   gap: 20px;
-  /* PP*/
-  /* padding-left: 6px; */
 }
 
 .gallery-section {
@@ -199,14 +196,11 @@ main {
 }
 
 .text__link:hover {
-  /* text-decoration-line: underline;  */
   border-bottom: 1px solid var(--card-text-color);
 }
 
 .text__link:focus {
   outline: 1px solid var(--card-text-color);
-  /* border:  none; */
-   /* text-decoration-line: none;  */
 }
 
 .gallery__image {
@@ -231,15 +225,10 @@ main {
     padding: 20px 20px 20px 0px;
   }
 
-  /* .header__title {
-    margin: 0;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
-  } */
   .main-title-decor {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem) ;
   }
   
-
   .decorated-zone::before {
     top: 20px;
     right: 20px;
