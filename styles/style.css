@@ -2,12 +2,12 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  background-image: var(--cover-image-dark);
+  background-image: var(--cover-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  background-color: rgba(0, 0, 40, 1);
+  background-color: var(--background-color);
 }
 
 .header {
@@ -28,19 +28,19 @@
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
-  color: rgba(255, 0, 112, 1);
+  color: rgba(var(--primary-color), 1);
 }
 
-.header__lamp::after{
+.header__lamp::after {
   content: '';
   position: absolute;
   width: 9px;
   height: 9px;
   align-self: center;
   margin-left: 10px;
-  background-color: rgba(255, 0, 112, 1);
+  background-color: rgba(var(--primary-color), 1);
   border-radius: 50%;
-  box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
+  box-shadow: 0px 0px 4px 2px rgba(var(--primary-color), 1);
 
 }
 .header__theme-menu {
@@ -58,24 +58,29 @@
 .header__theme-menu-button {
   background-color: transparent;
   border: none;
-  color: rgba(255, 0, 112, 1);
+  color: rgba(var(--section-title-color), 1);
   padding: 0 13px 1px 13px;
   text-transform: lowercase;
 }
 
-.header__theme-menu-button:not(:disabled):hover{
+.header__theme-menu-button:not(:disabled):hover {
   cursor: pointer;
-  outline: 1px solid rgba(255, 0, 112, 0.4);
+  outline: 1px solid rgba(var(--section-title-color), 0.4);
+}
+
+.header__theme-menu-button:not(:disabled):focus {
+  border-bottom: 1px solid rgba(var(--section-title-color), 0.4);
+  outline: none;
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid rgba(255, 0, 112, 1);
+  outline: 1px solid rgba(var(--section-title-color), 1);
 }
 
 .header__title {
   justify-self: start;
   align-self: center;
-  text-shadow: 4px 4px 0px rgba(255, 0, 112, 1);
+  text-shadow: 4px 4px 0px rgba(var(--primary-color), 1);
 }
 
 .decorated-zone {
@@ -89,8 +94,8 @@
   height: 25px;
   top: 10px;
   right: 10px;
-  border-top: 1px solid rgba(255, 0, 112, 1);
-  border-right: 1px solid rgba(255, 0, 112, 1);
+  border-top: 1px solid rgba(var(--section-title-color), 1);
+  border-right: 1px solid rgba(var(--section-title-color), 1);
 }
 
 .decorated-zone::after {
@@ -100,19 +105,19 @@
   height: 25px;
   bottom: 10px;
   left: 10px;
-  border-bottom: 1px solid rgba(255, 0, 112, 1);
-  border-left: 1px solid rgba(255, 0, 112, 1);
+  border-bottom: 1px solid rgba(var(--section-title-color), 1);
+  border-left: 1px solid rgba(var(--section-title-color), 1);
 }
 
 .main-title-decor {
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   font-weight: bold;
   line-height: 82.5%;
-  color: rgba(219, 0, 255, 1);
+  color: rgba(var(--title-color), 1);
 }
 
 .footer__title {
-  text-shadow: 2px 2px 0px rgba(255, 0, 112, 1);
+  text-shadow: 2px 2px 0px rgba(var(--primary-color), 1);
 }
 
 .header-title__text {
@@ -153,7 +158,7 @@ main {
   font-size: inherit;
   font-weight: bold;
   line-height: 23.4px;
-  color: rgba(255, 0, 112, 1);
+  color: rgba(var(--section-title-color), 1);
 }
 
 .card {
@@ -168,8 +173,8 @@ main {
 }
 
 .title-decor {
-  background-color: rgba(255, 0, 112, 1);
-  color: rgba(0, 0, 40, 1);
+  background-color: rgba(var(--primary-color), 1);
+  color: rgba(var(--secondary-color), 1);
 }
 
 .bold {
@@ -184,15 +189,24 @@ main {
   font-weight: 400;
   font-size: inherit;
   line-height: 23.4px;
-  color: rgba(241, 178, 206, 1);
+  color: var(--card-text-color);
 }
 
 .text__link {
-  text-shadow: 1px 1px 0px rgba(255, 0, 112, 1);
+  text-shadow: 1px 1px 0px rgba(var(--primary-color), 1);
+   text-decoration: none; 
+  border: none;
 }
 
 .text__link:hover {
-  text-decoration-line: underline;
+  /* text-decoration-line: underline;  */
+  border-bottom: 1px solid var(--card-text-color);
+}
+
+.text__link:focus {
+  outline: 1px solid var(--card-text-color);
+  /* border:  none; */
+   /* text-decoration-line: none;  */
 }
 
 .gallery__image {
@@ -256,11 +270,11 @@ main {
     padding-left: 6px;
   }
 
-  .extra-section .section__title{
+  .extra-section .section__title {
     grid-column: 1 / 2;
   }
 
-  .extra-section .card{
+  .extra-section .card {
      grid-column: 1 / 4;
      grid-row: auto;
   }
@@ -315,7 +329,7 @@ main {
  .section__content {
     padding-left: 0;
   }
-  .extra-section .card{
+  .extra-section .card {
      grid-column: auto;
      grid-row: 2;
   }
